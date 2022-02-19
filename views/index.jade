@@ -1,0 +1,34 @@
+doctype html 
+html(lang="en")
+    head 
+        title   #{title}
+        link(rel="stylesheet" href="/CSS/mystyle.css")
+    body
+        h1 Employee Details
+        a(href="create") Add Employee
+        <br><br>
+        if empdata.length > 0
+            table(border="1")
+                thead
+                    tr(style={"background-color":"yellow"})
+                        th ID 
+                        th EmpId
+                        th Name 
+                        th salary
+                        th 
+                        th 
+
+
+                tbody 
+                    each emp,i in empdata 
+                        tr 
+                            td #{emp._id}
+                            td #{emp.empid}
+                            td #{emp.ename}
+                            td #{emp.sal}
+                            td 
+                                a(href="/edit#{emp.empid}") Update
+                            td 
+                                a(href="/delete#{emp.empid}") Delete
+        else 
+            h3 NO Records Available 
